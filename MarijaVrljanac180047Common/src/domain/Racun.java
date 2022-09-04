@@ -199,7 +199,7 @@ public class Racun extends AbstractDomainObject{
 
     @Override
     public String vrednostiZaInsert() {
-        return predstava.getPredstavaID() + "," + nalog.getNalogID() + "," + racunID+",'" +new java.sql.Date(datumIVreme.getTime())+"',"+iznos+",'"+ziroRacun +"',"+karta.getKartaID();
+        return predstava.getPredstavaID() + "," + nalog.getNalogID() + "," + racunID+",'" +new java.sql.Timestamp(datumIVreme.getTime())+"',"+iznos+",'"+ziroRacun +"',"+karta.getKartaID();
     }
 
     @Override

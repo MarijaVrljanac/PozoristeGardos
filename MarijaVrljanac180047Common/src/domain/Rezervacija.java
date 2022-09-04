@@ -186,7 +186,7 @@ public class Rezervacija extends AbstractDomainObject{
 
     @Override
     public String vrednostiZaInsert() {
-        return predstava.getPredstavaID()+"," +nalog.getNalogID()+"," +rezervacijaID+",'" +imePrezime + "','" + new java.sql.Date(datumIVreme.getTime())+"',"+brojKarata ;
+        return predstava.getPredstavaID()+"," +nalog.getNalogID()+"," +rezervacijaID+",'" +imePrezime + "','" + new java.sql.Timestamp(datumIVreme.getTime())+"',"+brojKarata ;
     }
 
     @Override

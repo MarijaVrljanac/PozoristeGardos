@@ -173,12 +173,12 @@ public class Predstava extends AbstractDomainObject{
 
     @Override
     public String vrednostiZaInsert() {
-        return "'"+nazivPredstave + "','" + new java.sql.Date(datumIzvodjenja.getTime()) + "','" + detalji+"',"+scena.getScenaID();
+        return "'"+nazivPredstave + "','" + new java.sql.Timestamp(datumIzvodjenja.getTime()) + "','" + detalji+"',"+scena.getScenaID();
     }
 
     @Override
     public String vrednostiZaUpdate() {
-        return "DatumIzvodjenja= '"+new java.sql.Date(datumIzvodjenja.getTime())+"'";
+        return "DatumIzvodjenja= '"+new java.sql.Timestamp(datumIzvodjenja.getTime())+"'";
     }
 
     @Override

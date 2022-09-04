@@ -9,6 +9,7 @@ import db.DBBroker;
 import domain.AbstractDomainObject;
 import domain.Predstava;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
 import so.AbstractSO;
@@ -30,7 +31,7 @@ public class SOGetDatumiZaPredstava extends AbstractSO{
     @Override
     protected void execute(AbstractDomainObject ado) throws SQLException {
 
-        ArrayList<Date> datumi = DBBroker.getInstance().vratiDatumIVreme((Predstava) ado);
+        ArrayList<Timestamp> datumi = DBBroker.getInstance().vratiDatumIVreme((Predstava) ado);
         lista = (ArrayList<Date>) (ArrayList<?>) datumi;  
 
     }

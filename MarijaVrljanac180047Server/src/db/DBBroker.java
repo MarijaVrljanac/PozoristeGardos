@@ -135,15 +135,15 @@ public class DBBroker {
         return lista;
     }
     
-    public ArrayList<Date> vratiDatumIVreme(Predstava p) {
+    public ArrayList<Timestamp> vratiDatumIVreme(Predstava p) {
         String upit = "SELECT DatumIzvodjenja FROM Predstava WHERE PredstavaID = "+p.getPredstavaID();
-        ArrayList<Date> lista = new ArrayList<>();
+        ArrayList<Timestamp> lista = new ArrayList<>();
         try {
             Statement st = connection.createStatement();
             ResultSet rs = st.executeQuery(upit);           
             
             while(rs.next()){
-                Date d = p.getDatumIzvodjenja();
+                Timestamp d = rs.getTimestamp("DatumIzvodjenja");
                 lista.add(d);
             }
         } catch (SQLException ex) {
